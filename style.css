@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #caf0f8;
+}
+
+.container{
+    height: 60vh;
+    width: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.boxes{
+    height: 18vmin;
+    width: 18vmin;
+    background: linear-gradient(rgb(3, 3, 56),rgb(12, 143, 99));
+    color: #caf0f8;
+    outline: 0;
+    border: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    /* transition: .3s; */
+    position: relative;
+}
+
+.boxes:hover{
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    color: #fafafa;
+}
+
+.boxes:active{
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+    transition: 0s;
+    color: #fafafa;
+}
+
+.boxes::before{
+    position: absolute;
+    content: '';
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(59, 0, 0, 1.000) 0.000%, rgba(0, 0, 30, 1.000) 50.000%, rgba(8, 91, 99, 1.000) 100.000%);
+    border-radius: 1rem;
+    padding: 10px;
+    opacity: 0;
+    transition: .1s;
+}
+
+.boxes:hover::before{
+    opacity: 1;
+}
+
+.msg-reset{
+    margin-top: 2rem;
+    background: #7d818352;
+    padding: 1.3rem;
+    color: blue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+
+.reset-btn{
+    background-color: #dbe1e2e8;
+    text-align: center;
+    padding: 10px;
+    color: rgb(39, 37, 37);
+    border-radius: 10px;
+    border: 5px solid white;
+    cursor: pointer;
+}
+
+.reset-btn:hover{
+    border:5px solid #dbe1e2e8;
+    transition: all .1s;
+}
+
+.reset-btn:active{
+    border: 5px solid #7d818352;
+}
+
+.msg{
+    color: rgb(18, 18, 41);
+    margin-top: 1rem;
+    transition: all .3s;
+    display: none;
+}
